@@ -54,19 +54,12 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
   .logo-area { display: flex; align-items: center; gap: 14px; }
-  .logo-icon {
-    width: 48px; height: 48px;
-    background: var(--red);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Dancing Script', cursive;
-    color: var(--gold);
-    font-size: 22px;
-    font-weight: 700;
+  .logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
-  .logo-text { line-height: 1.2; }
-  .logo-text strong { font-size: 17px; font-weight: 800; color: var(--red); display: block; }
-  .logo-text small { font-size: 11px; color: var(--text-muted); }
   .header-cta {
     background: var(--red);
     color: var(--white);
@@ -1067,11 +1060,7 @@
 <!-- HEADER -->
 <header>
   <div class="logo-area">
-    <div class="logo-icon">An²</div>
-    <div class="logo-text">
-      <strong>An An Hoa Ngữ</strong>
-      <small>Dạy Chân Thành – Học Thành Danh</small>
-    </div>
+    <img class="logo-img" src="images/logo.png" alt="An An Hoa Ngữ — 2An Agency" loading="eager">
   </div>
   <a href="#dang-ky" class="header-cta">Đăng ký tư vấn miễn phí</a>
 </header>
@@ -1898,11 +1887,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo-area">
-        <div class="logo-icon">An²</div>
-        <div class="logo-text">
-          <strong>An An Hoa Ngữ</strong>
-          <small>Dạy Chân Thành – Học Thành Danh</small>
-        </div>
+        <img class="logo-img" src="images/logo.png" alt="An An Hoa Ngữ — 2An Agency" style="height:56px; filter: brightness(0) invert(1);">
       </div>
       <p style="margin-top:14px;">Công ty TNHH An An Hoa Ngữ<br>MST: 0402167094<br>Đơn vị đào tạo nhập hàng Trung Quốc hàng đầu miền Trung.</p>
       <div class="social-links" style="margin-top:16px;">
