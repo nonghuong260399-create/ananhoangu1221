@@ -68,147 +68,143 @@
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    border: none; cursor: pointer;
-  }
-  .header-cta:hover { background: var(--red-dark); transform: scale(1.03); }
-
-  /* ===== HERO ===== */
+  /* ===== HERO REBORN ===== */
   .hero {
-    background: linear-gradient(135deg, #1a0508 0%, #8f1a27 40%, var(--red) 100%);
+    background: #1a0508;
+    background-image: 
+      radial-gradient(circle at 80% 20%, rgba(143, 26, 39, 0.45) 0%, transparent 50%),
+      linear-gradient(135deg, #1a0508 0%, #3d0a0f 100%);
     color: var(--white);
-    padding: 80px 0 0;
+    padding: 100px 0;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '2AN';
+    position: absolute;
+    top: -50px; right: -50px;
+    font-size: 300px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    pointer-events: none;
   }
   .hero-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 40px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
     position: relative;
-    z-index: 2;
+    z-index: 5;
   }
-  .hero-top-content {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 50px;
+
+  .hero-content-left {
+    flex: 1.2;
+    padding-right: 20px;
   }
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(249,223,172,0.15);
+    display: inline-block;
+    background: rgba(249,223,172,0.1);
     border: 1px solid var(--gold);
     color: var(--gold);
-    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
     font-size: 11px;
-    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 7px 18px;
-    border-radius: 30px;
+    letter-spacing: 2px;
+    font-weight: 800;
     margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: clamp(36px, 5.5vw, 68px);
-    font-weight: 900;
+    font-size: clamp(38px, 5vw, 64px);
     line-height: 1.1;
-    margin-bottom: 24px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--white);
   }
+  .hero h1 .accent { color: var(--gold); }
   .hero-sub {
     font-family: 'Dancing Script', cursive;
-    font-size: clamp(20px, 2.5vw, 28px);
+    font-size: 28px;
     color: var(--gold);
-    margin-bottom: 24px;
+    margin-bottom: 30px;
   }
   .hero-desc {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.8;
-    opacity: 0.95;
-    margin-bottom: 36px;
-  }
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
+    color: rgba(255,255,255,0.85);
+    max-width: 600px;
     margin-bottom: 40px;
   }
-  .hero-tag {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  /* Mid Stats bar */
-  .hero-mid-stats {
+  
+  .hero-stats-row {
     display: flex;
-    justify-content: center;
-    gap: 1px;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  .stat-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 60px;
-  }
-  .hero-mid-stats .stat-item {
-    flex: 1;
-    text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.1);
-  }
-  .hero-mid-stats .stat-item:last-child { border-right: none; }
-  .stat-num { font-size: 34px; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
-  .stat-label { font-size: 12px; opacity: 0.8; margin-top: 8px; font-weight: 500; }
-
-  /* Bottom Split */
-  .hero-bottom-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: flex-end;
-  }
-  .hero-form-box {
-    padding-bottom: 60px;
-  }
-  .hero-image-box {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .hero-mentor-img {
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    object-fit: contain;
-    z-index: 1;
-  }
-  .hero-mentor-tag {
-    position: absolute;
-    bottom: 40px; right: 20px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(15px);
-    padding: 20px 25px;
+    padding: 15px 20px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    z-index: 3;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    min-width: 250px;
+    min-width: 120px;
   }
-  .hero-mentor-tag strong { color: var(--gold); font-size: 18px; display: block; font-weight: 800; margin-bottom: 4px; }
-  .hero-mentor-tag small { color: rgba(255,255,255,0.8); font-size: 13px; line-height: 1.4; }
+  .stat-card strong { font-size: 24px; color: var(--gold); display: block; line-height: 1; }
+  .stat-card span { font-size: 11px; opacity: 0.7; margin-top: 5px; display: block; }
 
-  @media (max-width: 900px) {
-    .hero { padding-top: 50px; }
-    .hero-mid-stats { flex-direction: column; gap: 24px; padding: 20px; }
-    .hero-mid-stats .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-    .hero-mid-stats .stat-item:last-child { border-bottom: none; }
-    .hero-bottom-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-form-box { padding-bottom: 0; }
-    .hero-mentor-tag { position: relative; bottom: 0; right: 0; margin-top: -30px; margin-bottom: 40px; text-align: center; }
+  /* Right Side: The Registration Card */
+  .hero-cta-card {
+    flex: 0.8;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+    color: var(--text);
+  }
+  .card-mentor-head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .head-avatar {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--red);
+    overflow: hidden;
+  }
+  .head-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .head-info strong { display: block; font-size: 16px; color: var(--red); font-weight: 800; }
+  .head-info span { font-size: 12px; color: var(--text-muted); }
+
+  .hero-form h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; color: #333; }
+  .hero-form p { font-size: 13px; color: #666; margin-bottom: 25px; }
+
+  /* Background Floating Image */
+  .hero-bg-mentor {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 60%;
+    height: auto;
+    opacity: 0.4;
+    z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    pointer-events: none;
+  }
+
+  @media (max-width: 1000px) {
+    .hero { padding: 80px 0; }
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-stats-row { justify-content: center; }
+    .hero-cta-card { width: 100%; max-width: 500px; margin: 0 auto; }
+    .hero-bg-mentor { display: none; }
   }
 
   /* ===== LEAD FORM ===== */
@@ -1010,77 +1006,66 @@
   <a href="#dang-ky" class="header-cta">Đăng ký tư vấn miễn phí</a>
 </header>
 
-<!-- HERO -->
+<!-- HERO REBORN -->
 <section class="hero">
+  <!-- Ảnh Cô Tịnh lồng nền -->
+  <img src="images/mentor_profile.png" class="hero-bg-mentor" alt="Cô Tịnh Mentor">
+
   <div class="hero-container">
     
-    <!-- TOP: Main Headings -->
-    <div class="hero-top-content">
+    <!-- Left: Content focus -->
+    <div class="hero-content-left">
       <div class="hero-badge">✨ Khoá học thực chiến #1 Đà Nẵng</div>
-      <h1>Nhập Hàng Trung Quốc<br><span style="color:var(--gold);">Không Cần Biết Tiếng, Không Cần Vốn Lớn</span></h1>
+      <h1>Nhập Hàng Trung Quốc<br><span class="accent">Không Cần Biết Tiếng,<br>Không Cần Vốn Lớn</span></h1>
       <p class="hero-sub">Dạy Chân Thành – Học Thành Danh</p>
-      <p class="hero-desc">Từ con số 0, học cách tự nhập hàng trực tiếp từ Taobao, 1688, Pinduoduo — không qua trung gian, không bị chặt chém, kiếm tiền thật từ ngày đầu tiên.</p>
       
-      <div class="hero-tags">
-        <span class="hero-tag">✅ Không cần biết tiếng Trung</span>
+      <p class="hero-desc">Từ con số 0, học cách tự nhập hàng trực tiếp từ Taobao, 1688, Pinduoduo — không qua trung gian, lãi thật từ ngày đầu tiên.</p>
+
+      <div class="hero-stats-row">
+        <div class="stat-card"><strong>9 năm</strong><span>Kinh nghiệm Order</span></div>
+        <div class="stat-card"><strong>2000+</strong><span>Học viên thành công</span></div>
+        <div class="stat-card"><strong>6 Năm</strong><span>Đào tạo thực chiến</span></div>
+      </div>
+
+      <div class="hero-tags" style="justify-content: flex-start; margin-top: 0;">
+        <span class="hero-tag">✅ Không cần biết tiếng</span>
         <span class="hero-tag">✅ Vốn nhỏ bắt đầu được</span>
-        <span class="hero-tag">✅ Có mentor 1:1 trong 3 năm</span>
-        <span class="hero-tag">✅ Học Online hoặc Offline</span>
+        <span class="hero-tag">✅ Mentor 1:1 trọn đời</span>
       </div>
     </div>
 
-    <!-- MIDDLE: Stats Row -->
-    <div class="hero-mid-stats">
-      <div class="stat-item">
-        <div class="stat-num">9 năm</div>
-        <div class="stat-label">Kinh nghiệm Order</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">6 Năm</div>
-        <div class="stat-label">Giảng dạy đào tạo</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2000+</div>
-        <div class="stat-label">Học viên đào tạo</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">44,8K+</div>
-        <div class="stat-label">Thành viên cộng đồng</div>
-      </div>
-    </div>
-
-    <!-- BOTTOM: Form + Image -->
-    <div class="hero-bottom-grid">
-      <div class="hero-form-box">
-        <div class="lead-form-hero" id="form-hero">
-          <h3>🎯 Nhận tư vấn MIỄN PHÍ</h3>
-          <p>Điền thông tin — mentor gọi lại trong 30 phút</p>
-          <div class="form-row">
-            <label for="hero-name">Họ và tên *</label>
-            <input type="text" id="hero-name" placeholder="Nguyễn Văn A">
-          </div>
-          <div class="form-row">
-            <label for="hero-phone">Số điện thoại *</label>
-            <input type="tel" id="hero-phone" placeholder="0912 345 678">
-          </div>
-          <div class="form-row">
-            <label for="hero-type">Hình thức học</label>
-            <select id="hero-type">
-              <option value="">-- Chọn hình thức học --</option>
-              <option value="E-learning">E-learning – 4.000.000đ</option>
-              <option value="Chuyên Sâu">Chuyên Sâu – 6.000.000đ</option>
-              <option value="Tư vấn">Cần tư vấn thêm</option>
-            </select>
-          </div>
-          <button class="btn-submit" onclick="submitForm('hero')">🚀 Đăng ký tư vấn ngay</button>
+    <!-- Right: Registration Card -->
+    <div class="hero-cta-card">
+      <div class="card-mentor-head">
+        <div class="head-avatar"><img src="images/mentor_profile.png" alt="Cô Tịnh"></div>
+        <div class="head-info">
+          <strong>Cô Tịnh (An An Hoa Ngữ)</strong>
+          <span>Founder & Mentor trực tiếp</span>
         </div>
       </div>
 
-      <div class="hero-image-box">
-        <img class="hero-mentor-img" src="images/mentor_profile.png" alt="Cô Nguyễn Thị Ngọc Tịnh">
-        <div class="hero-mentor-tag">
-          <strong>Cô Tịnh (An An Hoa Ngữ)</strong>
-          <small>Founder & CEO — 9 năm kinh nghiệm</small>
+      <div class="hero-form">
+        <h3>🎯 Nhận Tư Vấn Miễn Phí</h3>
+        <p>Để lại thông tin, Mentor sẽ gọi lại hỗ trợ bạn trong 30 phút.</p>
+        
+        <div class="lead-form-hero" id="form-hero" style="box-shadow:none; padding:0; background:none;">
+          <div class="form-row">
+            <label>Họ và tên *</label>
+            <input type="text" id="hero-name" placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-row">
+            <label>Số điện thoại *</label>
+            <input type="tel" id="hero-phone" placeholder="0912 345 678">
+          </div>
+          <div class="form-row">
+            <label>Hình thức học</label>
+            <select id="hero-type">
+              <option value="E-learning">E-learning – 4.000.000đ</option>
+              <option value="Chuyên sâu">Chuyên sâu – 6.000.000đ</option>
+              <option value="Tư vấn">Cần tư vấn thêm</option>
+            </select>
+          </div>
+          <button class="btn-submit" onclick="submitForm('hero')">🚀 GIỮ CHỖ NGAY — ƯU ĐÃI THÁNG NÀY</button>
         </div>
       </div>
     </div>
