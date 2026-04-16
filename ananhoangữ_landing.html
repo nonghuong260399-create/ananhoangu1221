@@ -176,7 +176,18 @@
   }
   .stat-item { text-align: left; }
   .stat-num { font-size: 30px; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
-  .stat-label { font-size: 11px; opacity: 0.75; margin-top: 6px; }
+  .hero-community {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px dashed rgba(255,255,255,0.3);
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    max-width: fit-content;
+  }
+  .comm-icon { font-size: 24px; }
+  .comm-text { font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.9); }
+  .comm-text strong { color: var(--gold); font-size: 15px; }
 
   @media (max-width: 900px) {
     .hero { min-height: auto; padding: 40px 0; }
@@ -185,6 +196,7 @@
     .hero-mentor-img { max-height: 50vh; margin: 0 auto; }
     .hero-tags { justify-content: center; }
     .hero-stats { justify-content: center; }
+    .hero-community { margin: 0 auto 24px; }
   }
 
   /* ===== LEAD FORM ===== */
@@ -999,6 +1011,11 @@
           <div class="stat-item"><span class="stat-num">9 năm</span><span class="stat-label">Kinh nghiệm</span></div>
           <div class="stat-item"><span class="stat-num">2000+</span><span class="stat-label">Học viên</span></div>
           <div class="stat-item"><span class="stat-num">6 Năm</span><span class="stat-label">Đào tạo</span></div>
+        </div>
+
+        <div class="hero-community">
+          <div class="comm-icon">👥</div>
+          <div class="comm-text"><strong>44.800+ thành viên</strong> tham gia cộng đồng<br>KINH NGHIỆM KHỞI NGHIỆP ORDER TAOBAO/1688 - XOÁ MÙ NHẬP HÀNG</div>
         </div>
 
         <p class="hero-desc">Từ con số 0, học cách tự nhập hàng trực tiếp từ Taobao, 1688, Pinduoduo — không qua trung gian, lãi thật từ ngày đầu tiên.</p>
