@@ -454,6 +454,45 @@
     color: var(--white);
     text-align: center;
   }
+  .curriculum-roadmap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .curriculum-bonuses { text-align: center; }
+  .bonus-box {
+    background: #fff;
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(212,175,55,0.15);
+  }
+  .bonus-header { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px; }
+  .bonus-gift-icon { font-size: 32px; }
+  .bonus-header h4 { font-size: 18px; font-weight: 800; color: #bf2436; margin: 0; }
+  .bonus-list-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  .bonus-list-two-col li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+    padding: 8px;
+    background: rgba(249,223,172,0.1);
+    border-radius: 8px;
+  }
+  @media (max-width: 768px) {
+    .curriculum-roadmap, .bonus-list-two-col { grid-template-columns: 1fr; }
+  }
   .numbers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1141,7 +1180,7 @@
     <div class="section-tag">Nội dung khoá học</div>
     <h2 class="section-title">Chương Trình Học<br><span class="red">Thực Chiến Từng Module</span></h2>
     <p class="section-desc">Được thiết kế theo lộ trình 4 chặng — từ người chưa biết gì đến người tự tin vận hành shop.</p>
-    <div class="curriculum-tabs">
+    <div class="curriculum-roadmap">
       <div class="module-card">
         <div class="module-header">
           <div class="module-num">1</div>
@@ -1200,32 +1239,24 @@
           </ul>
         </div>
       </div>
-      <div class="module-card">
-        <div class="module-header">
-          <div class="module-num">🎁</div>
-          <h4>Tặng kèm: Kinh doanh Order từ A–Z</h4>
-        </div>
-        <div class="module-body">
-          <ul class="module-list">
-            <li>Thiết lập ngân sách & phân tích nguồn vốn</li>
-            <li>Xây kênh Fanpage, Group, TikTok từ 0</li>
-            <li>Marketing Plan & Kịch bản Seeding</li>
-            <li>Kịch bản sale & chốt sale chuyên nghiệp</li>
-            <li>Quản lý kho, đơn hàng, dòng tiền</li>
-          </ul>
-        </div>
       </div>
-      <div class="module-card">
-        <div class="module-header">
-          <div class="module-num">📚</div>
-          <h4>Tặng kèm: Tiếng Trung cho dân order</h4>
+
+    <!-- BONUSES SECTION -->
+    <div class="curriculum-bonuses" style="margin-top: 40px;">
+      <div class="section-tag" style="background:rgba(212,175,55,0.1); color:var(--gold); margin: 0 auto 20px;">Quà tặng đặc biệt từ An An Hoa Ngữ</div>
+      <div class="bonus-box">
+        <div class="bonus-header">
+          <span class="bonus-gift-icon">🎁</span>
+          <h4>KHI ĐĂNG KÝ HÔM NAY, BẠN NHẬN THÊM:</h4>
         </div>
-        <div class="module-body">
-          <ul class="module-list">
-            <li>20+ video cơ bản: phát âm, viết chữ Hán, giao tiếp mua hàng</li>
-            <li>Bộ từ vựng tiếng Trung chuyên ngành nhập hàng</li>
-            <li>Trọn bộ sách HSK 1–4 + giáo trình BOYA</li>
-            <li>File mẫu đàm phán, mẫu đặt hàng bằng tiếng Trung</li>
+        <div class="bonus-body">
+          <ul class="bonus-list-two-col">
+            <li><span>✅</span> Lớp TIẾNG TRUNG CƠ BẢN 20 VIDEO theo giáo trình BOYA</li>
+            <li><span>✅</span> Lớp tiếng Trung Mua Hàng: 15 video chuyên sâu</li>
+            <li><span>✅</span> Học từ vựng qua hình ảnh: 15 video sống động</li>
+            <li><span>✅</span> Học hán tự và bộ thủ: 15 video nền tảng</li>
+            <li><span>✅</span> Trọn bộ sách HSK 1–6 (Sách giáo khoa + Sách bài tập)</li>
+            <li><span>✅</span> File 500 mẫu câu đàm phán, đặt hàng & từ vựng ngành nghề</li>
           </ul>
         </div>
       </div>
