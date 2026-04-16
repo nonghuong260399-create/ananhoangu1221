@@ -54,12 +54,19 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
   .logo-area { display: flex; align-items: center; gap: 14px; }
-  .logo-img {
-    height: 56px;
-    width: auto;
-    display: block;
-    object-fit: contain;
+  .logo-icon {
+    width: 48px; height: 48px;
+    background: var(--red);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
   }
+  .logo-text { line-height: 1.2; }
+  .logo-text strong { font-size: 17px; font-weight: 800; color: var(--red); display: block; }
+  .logo-text small { font-size: 11px; color: var(--text-muted); }
   .header-cta {
     background: var(--red);
     color: var(--white);
@@ -1060,7 +1067,11 @@
 <!-- HEADER -->
 <header>
   <div class="logo-area">
-    <img class="logo-img" src="images/logo.png" alt="An An Hoa Ngữ — 2An Agency" loading="eager">
+    <div class="logo-icon">An²</div>
+    <div class="logo-text">
+      <strong>An An Hoa Ngữ</strong>
+      <small>Dạy Chân Thành – Học Thành Danh</small>
+    </div>
   </div>
   <a href="#dang-ky" class="header-cta">Đăng ký tư vấn miễn phí</a>
 </header>
@@ -1088,20 +1099,20 @@
 
       <div class="hero-stats">
         <div class="stat-item">
-          <span class="stat-num">1.700+</span>
-          <div class="stat-label">Học viên đã đào tạo</div>
+          <span class="stat-num">9 năm</span>
+          <div class="stat-label">Kinh nghiệm kinh doanh order hàng Trung</div>
         </div>
         <div class="stat-item">
-          <span class="stat-num">39.000+</span>
-          <div class="stat-label">Thành viên cộng đồng</div>
+          <span class="stat-num">6 Năm</span>
+          <div class="stat-label">Kinh nghiệm giảng dạy</div>
         </div>
         <div class="stat-item">
-          <span class="stat-num">6 năm+</span>
-          <div class="stat-label">Kinh nghiệm thực chiến</div>
+          <span class="stat-num">hơn 2000</span>
+          <div class="stat-label">Học viên</div>
         </div>
         <div class="stat-item">
-          <span class="stat-num">3 năm</span>
-          <div class="stat-label">Cam kết đồng hành</div>
+          <span class="stat-num">44,8K+</span>
+          <div class="stat-label">Thành viên cộng đồng KINH NGHIỆM KHỞI NGHIỆP ORDER TAOBAO/1688 - XOÁ MÙ NHẬP HÀNG</div>
         </div>
       </div>
 
@@ -1132,7 +1143,11 @@
 
     <!-- RIGHT: Mentor Banner Image -->
     <div class="hero-right">
-      <img class="hero-mentor-img" src="images/mentor_profile.png" alt="Cô Nguyễn Thị Ngọc Tịnh — Founder An An Hoa Ngữ">
+      <!-- 📌 THAY ẢNH: đổi src dưới đây thành url ảnh thật của cô Tịnh -->
+      <!-- <img class="hero-mentor-img" src="images/mentor_profile.png" alt="Cô Nguyễn Thị Ngọc Tịnh — Founder An An Hoa Ngữ"> -->
+      <div class="hero-mentor-placeholder">
+        <!-- Khi có ảnh thật: xóa div này và uncomment thẻ <img> phía trên -->
+      </div>
 
       <!-- Badge nổi trên ảnh -->
       <div class="hero-mentor-badge">
@@ -1325,11 +1340,13 @@
   <div class="section-inner">
     <div class="mentor-inner">
       <div class="mentor-img-wrap">
-        <img
-          src="images/mentor_portrait.jpg"
-          alt="Cô Nguyễn Thị Ngọc Tịnh — Founder An An Hoa Ngữ"
-          style="width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top center; border-radius:24px; display:block;"
-        >
+        <div class="mentor-img-placeholder">
+          <div>
+            <div style="font-size:48px; margin-bottom: 8px;">👩‍🏫</div>
+            <div>Cô giáo Ngọc Tịnh</div>
+            <div style="font-size: 16px; opacity: 0.7; font-family: 'Be Vietnam Pro'">Founder & CEO</div>
+          </div>
+        </div>
         <div class="mentor-badge-float">
           <strong>1.700+</strong>
           <small>Học viên đã mentor</small>
@@ -1382,89 +1399,31 @@
   </div>
 </section>
 
-<!-- CLASSROOM PROOF -->
-<section style="background: var(--white); padding: 70px 40px;">
-  <div class="section-inner">
-    <div class="section-tag">Không gian học tập thực chiến</div>
-    <h2 class="section-title">Lớp Học Thật · Người Thật<br><span class="red">Kết Quả Thật Từ Ngày Đầu Tiên</span></h2>
-    <p class="section-desc" style="margin-bottom: 32px;">Mỗi lớp chỉ 15–20 học viên — cô giáo cầm tay chỉ việc từng người, đảm bảo ai cũng làm được đơn hàng thật ngay trong buổi học.</p>
-    <div style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); position: relative;">
-      <img
-        src="images/teaching_class.png"
-        alt="Lớp học nhập hàng Trung Quốc thực chiến tại An An Hoa Ngữ Đà Nẵng"
-        style="width:100%; display:block; object-fit:cover; max-height:500px;"
-      >
-      <div style="
-        position:absolute; bottom:0; left:0; right:0;
-        background: linear-gradient(transparent, rgba(26,5,8,0.85));
-        padding: 32px 36px 28px;
-        display: flex; gap: 32px; flex-wrap: wrap;
-      ">
-        <div style="color:#fff; text-align:center;">
-          <div style="font-size:28px; font-weight:900; color:var(--gold);">15–20</div>
-          <div style="font-size:12px; opacity:0.9;">học viên/lớp</div>
-        </div>
-        <div style="color:#fff; text-align:center;">
-          <div style="font-size:28px; font-weight:900; color:var(--gold);">100%</div>
-          <div style="font-size:12px; opacity:0.9;">thực hành đơn thật</div>
-        </div>
-        <div style="color:#fff; text-align:center;">
-          <div style="font-size:28px; font-weight:900; color:var(--gold);">Online</div>
-          <div style="font-size:12px; opacity:0.9;">hoặc Offline Đà Nẵng</div>
-        </div>
-        <div style="color:#fff; text-align:center;">
-          <div style="font-size:28px; font-weight:900; color:var(--gold);">3 năm</div>
-          <div style="font-size:12px; opacity:0.9;">mentor sau khoá</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONIALS -->
 <section class="testimonials-section">
   <div class="section-inner">
     <div class="section-tag">Học viên nói gì</div>
     <h2 class="section-title">Kết Quả Thật Từ<br><span class="red">Học Viên Thật Của Chúng Tôi</span></h2>
-
-    <!-- Ảnh feedback học viên -->
-    <div style="margin: 32px 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); border: 2px solid var(--border);">
-      <img
-        src="images/student_feedback.png"
-        alt="Feedback học viên An An Hoa Ngữ"
-        style="width:100%; display:block; object-fit:cover; max-height:520px;"
-      >
-    </div>
-
     <div class="testimonials-grid">
       <div class="testi-card">
         <p class="testi-text">Học xong lớp order, em chỉ hiểu từng bước như cô chỉ. Giờ tự order sướng đã man, mỗi đơn 10–25 sản phẩm về bán, khá lãi luôn. Tự định giá sướng — muốn lãi thì lãi, muốn bán rẻ lấy khách thì bán rẻ, không phải so giá với ai nữa!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); font-size:15px;">🎓</div>
-          <div>
-            <div class="testi-author-name">Học viên lớp Order</div>
-            <div class="testi-author-role">Đà Nẵng · Sau 3 tháng học</div>
-          </div>
+          <div class="testi-avatar">HV</div>
+          <div><div class="testi-author-name">Học viên lớp Order</div><div class="testi-author-role">Đà Nẵng · Sau 3 tháng học</div></div>
         </div>
       </div>
       <div class="testi-card">
         <p class="testi-text">Học viên từ Hải Phòng vào Đà Nẵng học. Ngày đầu học đã đặt 20 cái máy sấy quần áo. Ngày 2 đặt 200 hộp bột giặt. Bạn nói: Nguồn cô giáo text là em yên tâm mua thôi!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); font-size:15px;">🏆</div>
-          <div>
-            <div class="testi-author-name">Học viên lớp Coach 1:1</div>
-            <div class="testi-author-role">Hải Phòng · Bán order ngày trăm đơn</div>
-          </div>
+          <div class="testi-avatar">TP</div>
+          <div><div class="testi-author-name">Học viên lớp Coach 1:1</div><div class="testi-author-role">Hải Phòng · Bán order ngày trăm đơn</div></div>
         </div>
       </div>
       <div class="testi-card">
         <p class="testi-text">Chân thành đổi lấy chân thành. Tử tế song hành cùng tử tế. Cô dạy đến nơi đến chốn, học viên lớp Thực Chiến Mở Shop mới học được 1/2 chặng đường mà ra kết quả rồi. Điều quý nhất là 2 vợ chồng cùng học hành.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); font-size:15px;">💑</div>
-          <div>
-            <div class="testi-author-name">Vợ chồng học viên lớp Thực Chiến</div>
-            <div class="testi-author-role">Đà Nẵng · Khởi nghiệp cùng nhau</div>
-          </div>
+          <div class="testi-avatar">VN</div>
+          <div><div class="testi-author-name">Vợ chồng học viên lớp Thực Chiến</div><div class="testi-author-role">Đà Nẵng · Khởi nghiệp cùng nhau</div></div>
         </div>
       </div>
     </div>
@@ -1939,7 +1898,11 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo-area">
-        <img class="logo-img" src="images/logo.png" alt="An An Hoa Ngữ — 2An Agency" style="height:56px; filter: brightness(0) invert(1);">
+        <div class="logo-icon">An²</div>
+        <div class="logo-text">
+          <strong>An An Hoa Ngữ</strong>
+          <small>Dạy Chân Thành – Học Thành Danh</small>
+        </div>
       </div>
       <p style="margin-top:14px;">Công ty TNHH An An Hoa Ngữ<br>MST: 0402167094<br>Đơn vị đào tạo nhập hàng Trung Quốc hàng đầu miền Trung.</p>
       <div class="social-links" style="margin-top:16px;">
