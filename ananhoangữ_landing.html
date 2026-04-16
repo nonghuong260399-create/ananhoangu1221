@@ -68,143 +68,205 @@
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
-  /* ===== HERO REBORN ===== */
+    transition: background 0.2s, transform 0.15s;
+    border: none; cursor: pointer;
+  }
+  .header-cta:hover { background: var(--red-dark); transform: scale(1.03); }
+
+  /* ===== HERO ===== */
   .hero {
-    background: #1a0508;
-    background-image: 
-      radial-gradient(circle at 80% 20%, rgba(143, 26, 39, 0.45) 0%, transparent 50%),
-      linear-gradient(135deg, #1a0508 0%, #3d0a0f 100%);
+    background: linear-gradient(135deg, #1a0508 0%, #8f1a27 40%, var(--red) 100%);
     color: var(--white);
-    padding: 100px 0;
+    padding: 0;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 85vh; /* Hơi giảm chiều cao để tập trung hơn */
     display: flex;
     align-items: center;
-  }
-  .hero::before {
-    content: '2AN';
-    position: absolute;
-    top: -50px; right: -50px;
-    font-size: 300px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.02);
-    pointer-events: none;
+    justify-content: center;
   }
   .hero-container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 40px;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-    z-index: 5;
+    z-index: 2;
   }
-
-  .hero-content-left {
+  .hero-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 85vh;
+  }
+  /* Decorative chinese chars background */
+  .hero::before {
+    content: '安安';
+    position: absolute;
+    font-size: 380px;
+    opacity: 0.035;
+    left: 20px; bottom: -60px;
+    color: var(--gold);
+    font-weight: 900;
+    pointer-events: none;
+    line-height: 1;
+    z-index: 0;
+  }
+  /* LEFT PANEL */
+  .hero-left {
     flex: 1.2;
-    padding-right: 20px;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
   }
   .hero-badge {
-    display: inline-block;
-    background: rgba(249,223,172,0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(249,223,172,0.15);
     border: 1px solid var(--gold);
     color: var(--gold);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 30px;
     margin-bottom: 24px;
+    width: fit-content;
   }
   .hero h1 {
-    font-size: clamp(38px, 5vw, 64px);
-    line-height: 1.1;
+    font-size: clamp(32px, 4vw, 56px);
     font-weight: 900;
+    line-height: 1.15;
     margin-bottom: 20px;
     color: var(--white);
   }
   .hero h1 .accent { color: var(--gold); }
   .hero-sub {
-    font-family: 'Dancing Script', cursive;
-    font-size: 28px;
+    font-size: clamp(16px, 1.8vw, 22px);
+    margin-bottom: 24px;
+    font-weight: 500;
     color: var(--gold);
-    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
   }
   .hero-desc {
-    font-size: 17px;
+    font-size: 16px;
+    max-width: 580px;
+    opacity: 0.92;
     line-height: 1.8;
-    color: rgba(255,255,255,0.85);
-    max-width: 600px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
-  
-  .hero-stats-row {
+    opacity: 0.88;
+    line-height: 1.85;
+    margin-bottom: 32px;
+  }
+  .hero-tags {
     display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
   }
-  .stat-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 15px 20px;
-    border-radius: 12px;
-    min-width: 120px;
-  }
-  .stat-card strong { font-size: 24px; color: var(--gold); display: block; line-height: 1; }
-  .stat-card span { font-size: 11px; opacity: 0.7; margin-top: 5px; display: block; }
-
-  /* Right Side: The Registration Card */
-  .hero-cta-card {
-    flex: 0.8;
-    background: var(--white);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    position: relative;
-    color: var(--text);
-  }
-  .card-mentor-head {
-    display: flex;
+  .hero-tag {
+    display: inline-flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    gap: 6px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    color: rgba(255,255,255,0.90);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
   }
-  .head-avatar {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    border: 2px solid var(--red);
-    overflow: hidden;
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
-  .head-avatar img { width: 100%; height: 100%; object-fit: cover; }
-  .head-info strong { display: block; font-size: 16px; color: var(--red); font-weight: 800; }
-  .head-info span { font-size: 12px; color: var(--text-muted); }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label { font-size: 11px; opacity: 0.75; margin-top: 4px; letter-spacing: 0.2px; }
 
-  .hero-form h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; color: #333; }
-  .hero-form p { font-size: 13px; color: #666; margin-bottom: 25px; }
-
-  /* Background Floating Image */
-  .hero-bg-mentor {
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 60%;
+  /* RIGHT PANEL — Mentor Banner */
+  .hero-right {
+    flex: 0.8;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    min-height: 600px;
+  }
+  .hero-mentor-img {
+    width: 100%;
     height: auto;
-    opacity: 0.4;
+    max-height: 95%;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
     z-index: 1;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
-    pointer-events: none;
   }
+  .hero-mentor-caption {
+    position: absolute;
+    bottom: 20px; left: -20px; right: 20px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 3;
+  }
+  .hero-mentor-caption strong {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+    line-height: 1.2;
+  }
+  .hero-mentor-caption small {
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 4px;
+    display: block;
+  }
+  .hero-mentor-badge {
+    position: absolute;
+    top: 60px; right: 0;
+    background: var(--gold);
+    color: var(--red-dark);
+    padding: 12px 20px;
+    border-radius: 14px;
+    text-align: center;
+    z-index: 3;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .hero-mentor-badge strong { font-size: 26px; font-weight: 900; display: block; line-height: 1; }
+  .hero-mentor-badge span { font-size: 11px; font-weight: 700; }
 
-  @media (max-width: 1000px) {
-    .hero { padding: 80px 0; }
-    .hero-container { flex-direction: column; text-align: center; }
-    .hero-stats-row { justify-content: center; }
-    .hero-cta-card { width: 100%; max-width: 500px; margin: 0 auto; }
-    .hero-bg-mentor { display: none; }
+  /* Mobile hero */
+  @media (max-width: 900px) {
+    .hero { min-height: auto; padding-top: 40px; }
+    .hero-container { padding: 0 20px; }
+    .hero-split { flex-direction: column; min-height: auto; }
+    .hero-left { padding: 40px 0; flex: none; text-align: center; }
+    .hero-badge { margin-left: auto; margin-right: auto; }
+    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-tags { justify-content: center; }
+    .hero-right { flex: none; min-height: auto; width: 100%; padding-top: 20px; }
+    .hero-mentor-img { width: 90%; margin: 0 auto; }
+    .hero-mentor-caption { left: 0; right: 0; bottom: 0; position: relative; margin-top: -40px; margin-bottom: 20px; }
+    .hero-mentor-badge { top: 0; right: 10px; }
   }
 
   /* ===== LEAD FORM ===== */
@@ -1006,69 +1068,93 @@
   <a href="#dang-ky" class="header-cta">Đăng ký tư vấn miễn phí</a>
 </header>
 
-<!-- HERO REBORN -->
+<!-- HERO -->
 <section class="hero">
-  <!-- Ảnh Cô Tịnh lồng nền -->
-  <img src="images/mentor_profile.png" class="hero-bg-mentor" alt="Cô Tịnh Mentor">
-
   <div class="hero-container">
-    
-    <!-- Left: Content focus -->
-    <div class="hero-content-left">
-      <div class="hero-badge">✨ Khoá học thực chiến #1 Đà Nẵng</div>
-      <h1>Nhập Hàng Trung Quốc<br><span class="accent">Không Cần Biết Tiếng,<br>Không Cần Vốn Lớn</span></h1>
-      <p class="hero-sub">Dạy Chân Thành – Học Thành Danh</p>
-      
-      <p class="hero-desc">Từ con số 0, học cách tự nhập hàng trực tiếp từ Taobao, 1688, Pinduoduo — không qua trung gian, lãi thật từ ngày đầu tiên.</p>
+    <div class="hero-split">
 
-      <div class="hero-stats-row">
-        <div class="stat-card"><strong>9 năm</strong><span>Kinh nghiệm Order</span></div>
-        <div class="stat-card"><strong>2000+</strong><span>Học viên thành công</span></div>
-        <div class="stat-card"><strong>6 Năm</strong><span>Đào tạo thực chiến</span></div>
-      </div>
+      <!-- LEFT: Content + Stats + Form -->
+      <div class="hero-left">
+        <div class="hero-badge">✨ Khoá học thực chiến #1 Đà Nẵng</div>
 
-      <div class="hero-tags" style="justify-content: flex-start; margin-top: 0;">
-        <span class="hero-tag">✅ Không cần biết tiếng</span>
-        <span class="hero-tag">✅ Vốn nhỏ bắt đầu được</span>
-        <span class="hero-tag">✅ Mentor 1:1 trọn đời</span>
-      </div>
-    </div>
+        <h1>Nhập Hàng Trung Quốc<br><span class="accent">Không Cần Biết Tiếng,<br>Không Cần Vốn Lớn</span></h1>
 
-    <!-- Right: Registration Card -->
-    <div class="hero-cta-card">
-      <div class="card-mentor-head">
-        <div class="head-avatar"><img src="images/mentor_profile.png" alt="Cô Tịnh"></div>
-        <div class="head-info">
-          <strong>Cô Tịnh (An An Hoa Ngữ)</strong>
-          <span>Founder & Mentor trực tiếp</span>
+        <p class="hero-sub">Dạy Chân Thành – Học Thành Danh</p>
+
+        <p class="hero-desc">Từ con số 0, học cách tự nhập hàng trực tiếp từ Taobao, 1688, Pinduoduo — không qua trung gian, không bị chặt chém, kiếm tiền thật từ ngày đầu tiên.</p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">✅ Không cần biết tiếng Trung</span>
+          <span class="hero-tag">✅ Vốn nhỏ bắt đầu được</span>
+          <span class="hero-tag">✅ Có mentor 1:1 trong 3 năm</span>
+          <span class="hero-tag">✅ Học Online hoặc Offline</span>
         </div>
-      </div>
 
-      <div class="hero-form">
-        <h3>🎯 Nhận Tư Vấn Miễn Phí</h3>
-        <p>Để lại thông tin, Mentor sẽ gọi lại hỗ trợ bạn trong 30 phút.</p>
-        
-        <div class="lead-form-hero" id="form-hero" style="box-shadow:none; padding:0; background:none;">
+        <!-- HERO STATS: Optimized single-row layout -->
+        <div class="hero-stats" style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 32px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 28px;">
+          <div class="stat-item" style="flex: 1; min-width: 100px;">
+            <span class="stat-num" style="font-size: 28px; font-weight: 900; color: #f9dfac; line-height: 1; display: block;">9 năm</span>
+            <div class="stat-label" style="font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.4;">Kinh nghiệm<br>Kinh doanh Order</div>
+          </div>
+          <div class="stat-item" style="flex: 1; min-width: 100px;">
+            <span class="stat-num" style="font-size: 28px; font-weight: 900; color: #f9dfac; line-height: 1; display: block;">6 Năm</span>
+            <div class="stat-label" style="font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.4;">Kinh nghiệm<br>Giảng dạy đào tạo</div>
+          </div>
+          <div class="stat-item" style="flex: 1; min-width: 100px;">
+            <span class="stat-num" style="font-size: 28px; font-weight: 900; color: #f9dfac; line-height: 1; display: block;">2000+</span>
+            <div class="stat-label" style="font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.4;">Học viên đào tạo<br>Mentor trọn đời</div>
+          </div>
+          <div class="stat-item" style="flex: 1.5; min-width: 150px;">
+            <span class="stat-num" style="font-size: 28px; font-weight: 900; color: #f9dfac; line-height: 1; display: block;">44,8K+</span>
+            <div class="stat-label" style="font-size: 10px; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.4;">Thành viên tham gia cộng đồng<br>Kinh Nghiệm Khởi Nghiệp Order</div>
+          </div>
+        </div>
+
+        <div class="lead-form-hero" id="form-hero" style="margin: 40px 0 0 0;">
+          <h3>🎯 Nhận tư vấn khoá học MIỄN PHÍ</h3>
+          <p>Điền thông tin — mentor gọi lại trong 30 phút</p>
           <div class="form-row">
-            <label>Họ và tên *</label>
-            <input type="text" id="hero-name" placeholder="Nguyễn Văn A">
+            <label for="hero-name">Họ và tên *</label>
+            <input type="text" id="hero-name" placeholder="Nguyễn Văn A" autocomplete="name">
           </div>
           <div class="form-row">
-            <label>Số điện thoại *</label>
-            <input type="tel" id="hero-phone" placeholder="0912 345 678">
+            <label for="hero-phone">Số điện thoại *</label>
+            <input type="tel" id="hero-phone" placeholder="0912 345 678" autocomplete="tel">
           </div>
           <div class="form-row">
-            <label>Hình thức học</label>
+            <label for="hero-type">Hình thức học</label>
             <select id="hero-type">
-              <option value="E-learning">E-learning – 4.000.000đ</option>
-              <option value="Chuyên sâu">Chuyên sâu – 6.000.000đ</option>
-              <option value="Tư vấn">Cần tư vấn thêm</option>
+              <option value="">-- Chọn hình thức học --</option>
+              <option value="E-learning – 4.000.000đ">E-learning (Video sẵn) – 4.000.000đ</option>
+              <option value="Chuyên Sâu Nghề Order – 6.000.000đ">Chuyên Sâu Nghề Order – 6.000.000đ</option>
+              <option value="Chưa quyết định – cần tư vấn">Chưa quyết định – cần tư vấn thêm</option>
             </select>
           </div>
-          <button class="btn-submit" onclick="submitForm('hero')">🚀 GIỮ CHỖ NGAY — ƯU ĐÃI THÁNG NÀY</button>
+          <button class="btn-submit" id="hero-btn" onclick="submitForm('hero')">🚀 Nhận Tư Vấn Ngay — Miễn Phí 100%</button>
+          <p class="form-note">🔒 Cam kết bảo mật. Không spam. Không bán dữ liệu.</p>
         </div>
       </div>
+
+      <!-- RIGHT: Mentor Banner Image -->
+      <div class="hero-right">
+        <img class="hero-mentor-img" src="images/mentor_profile.png" alt="Cô Nguyễn Thị Ngọc Tịnh — Founder An An Hoa Ngữ">
+
+        <!-- Badge nổi trên ảnh -->
+        <div class="hero-mentor-badge">
+          <strong>hơn 2000</strong>
+          <span>học viên</span>
+        </div>
+
+        <!-- Caption đè lên ảnh -->
+        <div class="hero-mentor-caption">
+          <strong>Cô Tịnh (An An Hoa Ngữ)</strong>
+          <small>9 năm kinh nghiệm nhập hàng Trung Quốc<br>Và hỗ trợ hơn 2000 học viên thành công.</small>
+        </div>
+      </div>
+
     </div>
+  </div>
+</section>
 
   </div>
 </section>
